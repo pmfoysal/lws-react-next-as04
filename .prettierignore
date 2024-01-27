@@ -1,0 +1,5 @@
+dist
+logs
+build
+public
+node_modules
