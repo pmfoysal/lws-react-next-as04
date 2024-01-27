@@ -1,0 +1,17 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.tslint": "explicit"
+	},
+	"eslint.run": "onType",
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"javascript.validate.enable": false,
+	"typescript.validate.enable": false,
+	"[xml]": {
+		"editor.defaultFormatter": "redhat.vscode-xml"
+	}
+}
