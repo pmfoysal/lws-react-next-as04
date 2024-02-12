@@ -1,4 +1,6 @@
-export default function Header() {
+import categories from '@/data/categories.json';
+
+export default function Header({ search, setSearch, category, setCategory }) {
 	return (
 		<nav className='border-b border-black py-6 md:py-8'>
 			<div className='container mx-auto flex flex-wrap items-center justify-between gap-6'>
@@ -37,7 +39,7 @@ export default function Header() {
 							strokeLinejoin='round'
 						/>
 					</svg>
-					<span>Thursday, February 25, 2021</span>
+					<span>{new Date().toLocaleDateString('en-US', { dateStyle: 'full' })}</span>
 				</div>
 				<a href='/'>
 					<img className='max-w-[100px] md:max-w-[165px]' src='/assets/logo.png' alt='Lws' />
@@ -48,27 +50,15 @@ export default function Header() {
 			</div>
 			<div className='container mx-auto mt-6'>
 				<ul className='flex flex-wrap items-center justify-center gap-5 text-xs font-semibold lg:text-base'>
-					<li>
-						<a href='#'>General</a>
-					</li>
-					<li>
-						<a href='#'>Business</a>
-					</li>
-					<li>
-						<a href='#'>Entertainment</a>
-					</li>
-					<li>
-						<a href='#'>Health</a>
-					</li>
-					<li>
-						<a href='#'>Science</a>
-					</li>
-					<li>
-						<a href='#'>Sports</a>
-					</li>
-					<li>
-						<a href='#'>Technology</a>
-					</li>
+					{categories.map(item => (
+						<li key={item.id}>
+							<a
+								className={`cursor-pointer ${category === item.value && 'text-[#00d991]'}`}
+								onClick={() => setCategory(item.value)}>
+								{item.name}
+							</a>
+						</li>
+					))}
 				</ul>
 			</div>
 		</nav>
