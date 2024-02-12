@@ -16,7 +16,7 @@ export default function Card({ type, data }) {
 					<p className='mt-2 text-base text-[#5C5955]'>{getRelativeTime(publishedAt)}</p>
 				</div>
 				<div className='col-span-12 lg:col-span-8'>
-					<img className='w-full' src={urlToImage} alt={title} />
+					<img className='w-full' src={urlToImage || '/assets/thumb_lg.png'} alt={title} />
 					<p className='mt-2 text-base text-[#5C5955]'>Illustration: {source?.name}</p>
 				</div>
 			</div>
@@ -24,7 +24,7 @@ export default function Card({ type, data }) {
 	} else if (type === 'main') {
 		return (
 			<div className='col-span-12 mb-0 md:col-span-8'>
-				<img className='w-full' src={urlToImage} alt={title} />
+				<img className='w-full' src={urlToImage || '/assets/thumb.png'} alt={title} />
 				<div className='col-span-12 mt-4 md:col-span-4'>
 					<a href={url} target='_blank' rel='noreferrer'>
 						<h3 className='mb-2 text-xl font-bold lg:text-[20px]'>{title}</h3>
@@ -45,7 +45,7 @@ export default function Card({ type, data }) {
 					<p className='mt-5 text-base text-[#5C5955]'>{getRelativeTime(publishedAt)}</p>
 				</div>
 				<div className='col-span-12 md:col-span-6'>
-					<img className='w-full' src={urlToImage} alt={title} />
+					<img className='w-full' src={urlToImage || '/assets/thumb.png'} alt={title} />
 				</div>
 			</div>
 		);
