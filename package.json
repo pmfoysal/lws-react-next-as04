@@ -1,5 +1,5 @@
 {
-	"name": "lws-react-next-starter",
+	"name": "lws-react-next-as04",
 	"private": true,
 	"type": "module",
 	"version": "1.0.0",
@@ -7,7 +7,7 @@
 	"markdown": "github",
 	"readme": "README.md",
 	"publisher": "@pmfoysal",
-	"description": "Assignment 00 - Awesome Title!",
+	"description": "Assignment 04 - News Feeder!",
 	"author": {
 		"name": "Foysal Ahmmed",
 		"email": "pmfoysal@gmail.com",
@@ -33,7 +33,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pmfoysal/lws-react-next-starter.git"
+		"url": "https://github.com/pmfoysal/lws-react-next-as04.git"
 	},
 	"engineStrict": true,
 	"engines": {
