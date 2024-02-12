@@ -1,5 +1,6 @@
 export default function getRelativeTime(date) {
 	const diff = Math.round((new Date().getTime() - new Date(date).getTime()) / 1000);
+	if (isNaN(diff)) return 'invalid date';
 	const diffAbs = Math.abs(diff);
 	const rtf = new Intl.RelativeTimeFormat('en-US', { numeric: 'auto' });
 
