@@ -1,4 +1,5 @@
 import Icons from './icons';
+import { flushSync } from 'react-dom';
 import { useRef, useState } from 'react';
 import debounce from '@/utilities/debounce';
 import categories from '@/data/categories.json';
@@ -9,12 +10,12 @@ export default function Header({ setSearch, category, setCategory }) {
 
 	function handleSearchOpen() {
 		setSearch('');
-		setIsSearch(prev => !prev);
+		flushSync(() => setIsSearch(prev => !prev));
+		inputRef.current.focus();
 		inputRef.current.value = '';
 	}
 
 	const handleSearchInput = debounce(event => {
-		setCategory('');
 		setSearch(event.target.value);
 	});
 
@@ -27,7 +28,7 @@ export default function Header({ setSearch, category, setCategory }) {
 	}
 
 	return (
-		<nav className='border-b border-black py-6 md:py-8'>
+		<nav className='border-b border-black border-opacity-25 py-6 md:py-8'>
 			<div className='container mx-auto flex flex-wrap items-center justify-between gap-6'>
 				<div className='flex items-center space-x-4'>
 					<Icons name='web' />
